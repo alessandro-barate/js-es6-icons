@@ -146,7 +146,6 @@ for (let i = 0; i < fontAwesomeImages.length; i++) {
   let iContainer = elementCreation("div");
   let fontAwesomeI = elementCreation("i");
   fontAwesomeI.style.color = fontAwesomeImages[i].color;
-  fontAwesomeI.dataset.color = fontAwesomeImages[i].color;
   fontAwesomeI.classList.add(iconsFamily, `${iconsPrefix}${iconsName}`);
   iContainer.append(fontAwesomeI);
   div.append(iContainer, span);
@@ -174,11 +173,18 @@ for (let i = 0; i <= 3; i++) {
 }
 
 // Evento click su options
+const iconsDiv = document.getElementsByClassName("col-20");
+
 let optionValue = document.getElementById("colors");
 optionValue.addEventListener("click", function () {
+  let iconsValue = iconsDiv.getAttribute("value");
+  console.log(iconsValue);
   switch (optionValue.value) {
     case "blue":
-      console.log("blue");
+      if (iconsValue !== "blue") {
+        console.log("blue");
+        iconsDiv.classList.add("d-none");
+      }
       break;
 
     case "green":
