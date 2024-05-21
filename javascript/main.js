@@ -175,11 +175,11 @@ for (let i = 0; i <= 3; i++) {
 // Evento click su options
 const iconsDiv = document.getElementsByClassName("col-20");
 
-let optionValue = document.getElementById("colors");
-optionValue.addEventListener("click", function () {
+let options = document.getElementById("colors");
+options.addEventListener("click", function () {
   let iconsValue = iconsDiv.getAttribute("value");
   console.log(iconsValue);
-  switch (optionValue.value) {
+  switch (options.value) {
     case "blue":
       if (iconsValue !== "blue") {
         console.log("blue");
